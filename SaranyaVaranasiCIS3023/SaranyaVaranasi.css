@@ -1,0 +1,35 @@
+body {
+    font-family: courier;
+    background-color: White;
+    margin: 10em;
+    width: 670px;
+    border: 20px solid DarkCyan;
+    text-align: center;
+    border-radius: 25px;
+    padding: 0 2em 1em;
+}
+h1 {
+    color: black;
+    margin-bottom: .5em;
+    text-shadow: 1px 1px 2px black, 0 0 10px DarkCyan, 0 0 5px thistle;
+    font-size: 400%;
+}
+p {
+   font-size: 130%; 
+}
+#vowels {
+    height: 30px;
+    width: 20em;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 100%;
+}
+#output {
+    height: 60px;
+    width: 30em;
+    font-size: 140%;
+    text-align: center;
+    border: 2px solid gray;
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="assignment4.css">
+<body>
+	<header>
+		<h1>Birthday Probability Test</h1>
+		<h2>Let's see what the probability is that at least 2 of our 25 customers have the same birthday.</h2>
+	</header>
+	<script>
+	
+function doExperiment()
+{
+	var arrayBirthdays= new Array(25);
+	for(var i = 0; i< arrayBirthdays.length; i++) //looping through all 25 index positions 
+	{
+		arrayBirthdays[i] = Math.floor(Math.random() * 365) +1; //populates each element with a number from 1 to 365, which represents an individual day in a year
+	} //for
+	
+	function sortfunction(a, b)
+	{
+		return (a - b)
+	}
+	var sortedBdays = arrayBirthdays.sort(sortfunction);
+
+	for (var j=0; j<(sortedBdays.length-1); j++)
+	{
+	if (sortedBdays[j+1] === sortedBdays[j])
+		{
+			return true;
+		} 
+	}
+	return false;
+}
+
+function main()
+{
+	const experimentTitle = "2 out of 25 people having the same birthday";
+	
+	var numTrials = parseInt(prompt("How many trials should we run?"));
+	
+	for(;;)
+				{
+					if(!isNaN(numTrials)) //saying if the input is a valid number...
+					{
+						break; //exit the error-checking loop if the input is valid
+					}
+					numTrials = parseInt(prompt("Please enter a valid number of trials.")); //otherwise, keep prompting for valid input and eventually assign it to the variable firstPlusNum
+				}
+				
+	var numSucesses = 0;
+	for (var i = 0 ; i < numTrials ; i++)
+	{
+		if (doExperiment())
+		{
+		numSucesses++;
+		}
+	}
+	var probability = numSucesses / numTrials;
+	alert("The probability of " + experimentTitle + " is " + probability.toFixed(3) + ".")
+	
+	if (probability >= .5)
+	{
+		alert("Better keep some birthday cards handy!");
+	}
+}
+	
+	
+main();
+	</script>
+</body>
+</html>

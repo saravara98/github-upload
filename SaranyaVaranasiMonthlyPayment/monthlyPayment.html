@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Monthly Payment Calculator</title>
+		<link rel="stylesheet" href="monthlyPayment.css">
+		<script src="monthlyPayment.js"></script>
+	</head>
+	<body>
+		<main>
+			<h1>Taking out a Loan?</h1>
+			<h2> See how much you will have to pay each month!</h2>
+			<form id="payment_calc" name="payment_calc" onsubmit="calculateMonthlyPayment()" method="POST">
+				<label for="first_name">First Name:</label>
+				<input type="text" id="first_name" name="first_name">
+				<br>
+
+				<label for="initial_loan">Initial Loan Amount:</label>
+				<input type="integer" id="initial_loan" placeholder="Enter at least 0." name="initial_loan" min=0 required>
+                                                                                                                                                                                         
+				<br>
+
+				<label for="months">Loan Period:</label>
+				<input type="integer" id="months" name="months" placeholder="Enter at least 0." min=0 required> month(s)
+				<br>
+				
+				<label for="interest">Annual Interest Rate:</label>
+				<input type="integer" id="interest" placeholder="Enter a percentage from 0 to 100." min="0" max="100" required>%
+				<br>
+				<label for="monthly_payment">Monthly Payment:</label>
+				<input type="integer" id="monthly_payment" disabled>
+				<br>
+				
+				<input type="submit" id="calculate" name="calculate" onclick="calculateMonthlyPayment()" value="Calculate!">
+				<br>		
+			</form>
+		</main>
+	</body>
+</html>
